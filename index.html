@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>a</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/color-picker/coloris.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- Canvas -->
+<canvas class="orb-canvas"></canvas>
+<div class="container">
+  <div class="column1">
+    <div class="controller">
+      <h3>Pick the main color</h3>
+      <input type="text" data-coloris placeholder="HSL color" value="var(--base)">
+      <h3 style="margin-top: 20px;">Name</h3>
+      <input value="Minecraft">
+      <div style="margin-top: 25px;">
+          <input type="checkbox" name="bold-text" id="bold-text" class="checkbox">
+          <label for="bold-text">Bold</label><br>
+          <input type="checkbox" name="italic-text" id="italic-text" class="checkbox">
+          <label for="italic-text">Italic</label><br>
+          <input type="checkbox" name="underline-text" id="underline-text" class="checkbox">
+          <label for="underline-text">Underline</label><br>
+          <input type="checkbox" name="strike-text" id="strike-text" class="checkbox">
+          <label for="strike-text">Strike</label><br>
+      </div>
+    </div>
+  </div>
+  <div class="column2">
+    <span class="text-gradient output-text">Minecraft</span>
+  </div>
+</div>
+  <script type="module" src="script.js"></script>
+<script src="pixi.min.js"></script>
+<script src="assets/color-picker/coloris.js"></script>
+</body>
+</html>

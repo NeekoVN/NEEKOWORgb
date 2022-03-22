@@ -18,7 +18,7 @@
     themeMode: 'light',
     wrap: true,
     margin: 4,
-    format: 'hsl',
+    format: 'hex',
     formatToggle : false,
     swatches: [],
     swatchesOnly: false,

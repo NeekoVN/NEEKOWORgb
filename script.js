@@ -24,23 +24,26 @@ class ColorPalette {
   }
 
   setColors() {
-    // pick a random hue somewhere between 220 and 360
-    this.hue = ~~random(220, 360);
-    this.complimentaryHue1 = this.hue + 30;
-    this.complimentaryHue2 = this.hue + 60;
+    // pick a random hue somewhere between 0 and 360
+    this.hue = ~~random(0, 360);
+    this.complimentaryHue1 = this.hue + 35;
+    this.complimentaryHue2 = this.hue + 70;
     // define a fixed saturation and lightness
-    this.saturation = 95;
-    this.lightness = 50;
+    this.saturation = 100;
+    this.lightness = 70;
 
     // define a base color
     this.baseColor = hsl(this.hue, this.saturation, this.lightness);
-    // define a complimentary color, 30 degress away from the base
+    var colorPickerValue = document.getElementById("colorPickerValue");
+    colorPickerValue.value= hsl(this.hue, this.saturation, this.lightness);
+    
+    // define a complimentary color, 35 degress away from the base
     this.complimentaryColor1 = hsl(
       this.complimentaryHue1,
       this.saturation,
       this.lightness
     );
-    // define a second complimentary color, 60 degrees away from the base
+    // define a second complimentary color, 70 degrees away from the base
     this.complimentaryColor2 = hsl(
       this.complimentaryHue2,
       this.saturation,

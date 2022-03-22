@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>a</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/color-picker/coloris.css"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="style.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="jquery-min.js"></script>
+<script>
+  $(document).ready(function(){
+      $("#outputTextInput").on("input", function(){
+          // Print entered value in a div box
+          $("#outputText").text($(this).val());
+      });
+  });
+  </script>
 </head>
 <body>
 <!-- Canvas -->
@@ -16,9 +23,9 @@
   <div class="column1">
     <div class="controller">
       <h3>Pick the main color</h3>
-      <input type="text" data-coloris placeholder="HSL color" value="var(--base)">
+      <input type="text" data-coloris placeholder="HEX color" id="colorPickerValue">
       <h3 style="margin-top: 20px;">Name</h3>
-      <input value="Minecraft">
+      <input value="Your name here" id="outputTextInput">
       <div style="margin-top: 25px;">
           <input type="checkbox" name="bold-text" id="bold-text" class="checkbox">
           <label for="bold-text">Bold</label><br>
@@ -32,7 +39,7 @@
     </div>
   </div>
   <div class="column2">
-    <span class="text-gradient output-text">Minecraft</span>
+    <div class="text-gradient output-text" id="outputText">Your name here</div>
   </div>
 </div>
   <script type="module" src="script.js"></script>

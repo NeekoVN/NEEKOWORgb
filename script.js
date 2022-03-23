@@ -33,12 +33,14 @@ class ColorPalette {
     this.lightness = 70;
 
     // define a base color
-    this.baseColor = hsl(this.hue, this.saturation, this.lightness);
+    this.baseColor = hsl(this.hue, this.saturation, this.lightness); //HSL converted to HEX
     var colorPickerValue = document.getElementById("colorPickerValue");
-    colorPickerValue.value= hsl(this.hue, this.saturation, this.lightness);
-    var HSLvalue = "hsl(" + this.hue + ", " + this.saturation + "%, " + this.lightness + "%)";
+    colorPickerValue.value = hsl(this.hue, this.saturation, this.lightness); //HSL converted to HEX
+    var HSLvalue = "hsl(" + this.hue + ", " + this.saturation + "%, " + this.lightness + "%)"; //HEX converted back to HSL
     var hs = document.getElementById("hs");
-    hs.innerHTML = HSLvalue;
+    hs.innerHTML = HSLvalue + "," + colorPickerValue.value;
+    console.log("baseColor: ", this.baseColor);
+    console.log("HSLvalue: ", HSLvalue);
     // define a complimentary color, 35 degress away from the base
     this.complimentaryColor1 = hsl(
       this.complimentaryHue1,
@@ -58,7 +60,7 @@ class ColorPalette {
       this.complimentaryColor1,
       this.complimentaryColor2
     ];
-  }
+  };
 
   randomColor() {
     // pick a random color
@@ -219,14 +221,3 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     orb.render();
   });
 }
-
-document
-  .querySelector(".overlay__btn--colors")
-  .addEventListener("click", () => {
-    colorPalette.setColors();
-    colorPalette.setCustomProperties();
-
-    orbs.forEach((orb) => {
-      orb.fill = colorPalette.randomColor();
-    });
-  });

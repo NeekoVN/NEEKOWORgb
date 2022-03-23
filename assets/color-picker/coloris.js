@@ -15,7 +15,7 @@
     el: '[data-coloris]',
     parent: null,
     theme: 'default',
-    themeMode: 'light',
+    themeMode: 'dark',
     wrap: true,
     margin: 4,
     format: 'hex',

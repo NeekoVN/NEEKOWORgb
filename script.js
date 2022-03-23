@@ -36,7 +36,9 @@ class ColorPalette {
     this.baseColor = hsl(this.hue, this.saturation, this.lightness);
     var colorPickerValue = document.getElementById("colorPickerValue");
     colorPickerValue.value= hsl(this.hue, this.saturation, this.lightness);
-    
+    var HSLvalue = "hsl(" + this.hue + ", " + this.saturation + "%, " + this.lightness + "%)";
+    var hs = document.getElementById("hs");
+    hs.innerHTML = HSLvalue;
     // define a complimentary color, 35 degress away from the base
     this.complimentaryColor1 = hsl(
       this.complimentaryHue1,

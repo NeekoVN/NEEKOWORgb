@@ -44,7 +44,12 @@ body {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-  filter: drop-shadow(0 0 5px #fff);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1), inset 0 0 2rem 0.2rem rgba(255, 255, 255, 0);
+  border-radius: 2.5rem;
+  margin: 0 20px;
+  padding: 20px 20px;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
